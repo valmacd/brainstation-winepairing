@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: white;
+  text-shadow: 1px 1px 6px black
+}
+.background {
+  background-image: url("/picture/Mapleleaf.jpg");
+  background-image: 100%;
+}
+
+/* let winelist = []
+let data = result.data.result;
+
+for (i=0; i<data.length; i++) {
+  if (data[i].primary_category === "Wine") {
+    winelist.push(data[i].primary_category);
+  }
+}
+console.log(winelist); */
+
