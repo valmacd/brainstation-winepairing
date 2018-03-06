@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const axios = require('axios')
-const key = require('../key.js');
+const key = require('./key.js');
 const bodyParser = require('body-parser')
 const cors=require('cors')
 let lcboKey = key.key;
