@@ -9,7 +9,8 @@ class Home extends React.Component {
             winelist: {
                 foodpair : '',
                 cost : '',
-                sugar : ''
+                sugar : '',
+                colour: ''
             },  
             winechoices : []
         }
@@ -21,7 +22,8 @@ class Home extends React.Component {
             winelist: {
             foodpair: e.target.foodpair.value,
             cost: e.target.cost.value,
-            sugar: e.target.sugar.value
+            sugar: e.target.sugar.value,
+            colour: e.target.colour.value
             }
         });   
     }
