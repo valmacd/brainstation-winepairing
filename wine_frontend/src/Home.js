@@ -20,7 +20,6 @@ class Home extends React.Component {
         e.preventDefault();
         this.setState({
             winelist: {
-            foodpair: e.target.foodpair.value,
             cost: e.target.cost.value,
             sugar: e.target.sugar.value,
             colour: e.target.colour.value
