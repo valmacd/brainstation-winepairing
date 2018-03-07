@@ -17,7 +17,7 @@ app.use(cors());
 app.post('/wine',(req,res)=>{
   let wineChoice = [];
   let userInput = req.body;
-  console.log(userInput);
+  //console.log(userInput);
   debugger
   // let foodPair = userInput.foodpair;
   let wineColor = userInput.colour;
@@ -42,7 +42,8 @@ app.post('/wine',(req,res)=>{
       //console.log(wineArray);
       let sugarWinelist = sugarRange(sugarInput, wineArray);
       let costWinelist = price(costInput, sugarWinelist);
-      console.log(costWinelist.length);
+      let randomList = randomizer(costWinelist);
+      console.log(randomList.length);
       res.send('hey');
     }
     else {
@@ -63,7 +64,6 @@ app.post('/wine',(req,res)=>{
     
       //res send something here
   }
-
 
   function whatColor(colour) {
     if(colour === 'red') {
@@ -110,6 +110,34 @@ app.post('/wine',(req,res)=>{
     }
   }
 
+  function randomizer(wineArray) {
+    if(wineArray.length <= 4) {
+      return wineArray;
+    }
+    else {
+      let newArray = [];
+      let randomArray = [];
+      let randomNumber;
+      for (let i=0; i<4; i++) {
+        let random = Math.random(wineArray.length);
+        randomNumber = randomCheck(random, randomArray);
+      }
+      randomArray.push(randomNumber);
+      newArray.push(wineArray[randomNumber]);
+      console.log(randomArray);
+      console.log(wineArray);
+    }
+  }
+
+  function randomCheck(random, randomArray) {
+    for (let j=0; j<randomArray.length; j++) {
+      if (random === randomArray[j]) {
+        let randomNum = Math.random(wineArray.length);
+        randomCheck(randomNum);
+      }
+    }
+    return random;
+  }
 
 app.listen(8080, () => {
   console.log('listening on 8080')
