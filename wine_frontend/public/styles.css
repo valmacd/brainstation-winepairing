@@ -1,0 +1,14 @@
+.form {
+  display: grid;
+  grid-template-areas: 
+  'formItem formItem formItem'
+  'formSubmit';
+}
+
+.formItem{
+  grid-area: 'formItem'
+}
+
+.formSubmit{
+  grid-area: 'formSubmit'
+}

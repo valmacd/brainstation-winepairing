@@ -2,40 +2,33 @@ import React from 'react';
 import Form from './components/Form';
 import axios from 'axios';
 
+const grid = {
+    display:'grid',
+    gridTemplateRows:'1fr 2fr'
+}
+
 class Home extends React.Component {
     constructor() {
         super();
-        this.state= {
+        this.state = {
             winelist: {
-                foodpair : '',
-                cost : '',
-                sugar : ''
-            },  
-            winechoices : []
+                foodpair: '',
+                cost: '',
+                sugar: ''
+            },
+            winechoices: []
         }
     }
-
-    submitHandler = (e) => {
-        e.preventDefault();
-        this.setState({
-            winelist: {
-            foodpair: e.target.foodpair.value,
-            cost: e.target.cost.value,
-            sugar: e.target.sugar.value
-            }
-        });   
-    }
-
     componentDidUpdate = () => {
-       axios.post('http://localhost:8080/wine', this.state.winelist)
-        .then((results) => {
-            console.log('success')
-            console.log(results);
-        })
-        .catch((error) => {
-            console.log('HIT A FUCKING ERROR')
-            console.log(error);
-        }); 
+        axios.post('http://localhost:8080/wine', this.state.winelist)
+            .then((results) => {
+                console.log('success')
+                console.log(results);
+            })
+            .catch((error) => {
+                console.log('HIT A FUCKING ERROR')
+                console.log(error);
+            });
         // axios.get('http://localhost:8080/wine')
         // .then((results) => {
         //     this.setState({
@@ -46,18 +39,26 @@ class Home extends React.Component {
         //     console.log(error);
         // }); 
     }
-
+    submitHandler = (e) => {
+        e.preventDefault();
+        this.setState({
+            winelist: {
+                foodpair: e.target.foodpair.value,
+                cost: e.target.cost.value,
+                sugar: e.target.sugar.value
+            }
+        });
+    }
     render() {
-        return(
-            <div>
-                <div className='col-12 col-md-12'>
+        return (
+            <div style={grid}>
+                <div className='item1'>
                     <h1>VQA Sommelier</h1>
                     <h3>Discover Canadian Wine</h3>
                 </div>
-                <div className="container">
-                    <Form submitHandler={this.submitHandler}/>
-                </div> 
-                 
+                <div className="item2">
+                    <Form submitHandler={this.submitHandler} />
+                </div>
             </div>
         )
     };
