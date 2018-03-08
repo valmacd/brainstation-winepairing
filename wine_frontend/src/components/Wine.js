@@ -1,13 +1,17 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
-class Wine extends Component{
-  render(){
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+
+class Wine extends Component {
+  render() {
     return(
-<div>
-<Link to='/winedetail/:wineId'>Name: {this.props.wine.name}</Link>
-</div>
-    );
-  }
+      <div>
+        <img src={this.props.wine.image_url}/>
+        <Link to={'/winedetail/' + this.props.wine.id}>Name: {this.props.wine.name}</Link>
+      </div>
+    )
+  };
 }
 
-export default Wine
+// '/winedetail/:wineId'
+
+export default Wine;

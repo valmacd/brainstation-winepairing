@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import Wine from './Wine'
+import {Link} from 'react-router-dom';
+import Wine from './Wine';
 
 class WineList extends React.Component {
     render() {
@@ -9,8 +9,8 @@ class WineList extends React.Component {
         )
         return (
             <div>
-            <h1>I am the wineList</h1>
-            {wine}
+                <h1>I am the wineList</h1>
+                {wine}
             </div>
         )
     };
