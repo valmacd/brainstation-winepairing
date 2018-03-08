@@ -39,7 +39,7 @@ class Home extends React.Component {
                 console.log(results);
             })
             .catch((error) => {
-                console.log('HIT A FUCKING ERROR')
+                console.log("ya dun goofed")
                 console.log(error);
             });
         // axios.get('http://localhost:8080/wine')
