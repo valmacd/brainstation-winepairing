@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const grid = {
     display:'grid',
-    gridTemplateRows:'1fr 2fr'
+    gridTemplateRows:'1fr auto auto'
 }
 
 class Home extends React.Component {
@@ -17,7 +17,7 @@ class Home extends React.Component {
                 sugar : '',
                 colour: ''
             },  
-            winechoices : []
+            wineChoices : []
         }
     }
 
@@ -37,6 +37,12 @@ class Home extends React.Component {
         .then((results) => {
             console.log('success')
             console.log(results.data);
+            let winechoicesCopy =  Array.from(this.state.wineChoices)
+            console.log('wineCopy', winechoicesCopy)
+            // Getting thrown into an infinit loop right here. Is it because setState causes a rerender which then causes componentDidUpdate to be called again... and again?
+            winechoicesCopy.push(results.data)
+            this.setState({winechoicesCopy})
+            
         })
         .catch((error) => {
             console.log("Ya Dun Goof'd")
