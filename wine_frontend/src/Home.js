@@ -12,13 +12,26 @@ class Home extends React.Component {
         super();
         this.state = {
             winelist: {
-                foodpair: '',
-                cost: '',
-                sugar: ''
-            },
-            winechoices: []
+                foodpair : '',
+                cost : '',
+                sugar : '',
+                colour: ''
+            },  
+            winechoices : []
         }
     }
+
+    submitHandler = (e) => {
+        e.preventDefault();
+        this.setState({
+            winelist: {
+            cost: e.target.cost.value,
+            sugar: e.target.sugar.value,
+            colour: e.target.colour.value
+            }
+        });   
+    }
+
     componentDidUpdate = () => {
         axios.post('http://localhost:8080/wine', this.state.winelist)
             .then((results) => {
