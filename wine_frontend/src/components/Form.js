@@ -40,8 +40,7 @@ class Form extends React.Component {
                             <option value="20">more than 20 g/L</option>
                         </select>
                     </div>
-
-                    <div className='col-12 col-md-12 pickWine' style={buttonGrid}>
+                    <div className='col-12 col-md-12 pickWine'>
                         <button type='submit' value='Submit' >Pick a Wine for me</button>    
                     </div>
                 
