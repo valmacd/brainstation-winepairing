@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-
+import {Link} from 'react-router-dom'
 class Wine extends Component{
   render(){
     return(
 <div>
-<h1>I am the wine</h1>
+<Link to='/winedetail/:wineId'>Name: {this.props.wine.name}</Link>
 </div>
     );
   }

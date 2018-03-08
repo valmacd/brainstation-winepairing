@@ -5,7 +5,7 @@ import Wine from './Wine'
 class WineList extends React.Component {
     render() {
         let wine = this.props.winechoice.map(wine=>
-            <Wine wine={wine}/>
+            <Wine wine={wine} />
         )
         return (
             <div>
