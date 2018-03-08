@@ -31,7 +31,7 @@ class Home extends React.Component {
        axios.post('http://localhost:8080/wine', this.state.winelist)
         .then((results) => {
             console.log('success')
-            console.log(results);
+            console.log(results.data);
         })
         .catch((error) => {
             console.log('HIT A FUCKING ERROR')
@@ -39,9 +39,10 @@ class Home extends React.Component {
         }); 
         // axios.get('http://localhost:8080/wine')
         // .then((results) => {
-        //     this.setState({
-        //         winechoices: results.data
-        //     })
+        //     console.log(results.data);
+        //     // this.setState({
+        //     //     winechoices: results.data
+        //     // })
         // })
         // .catch((error) => {
         //     console.log(error);

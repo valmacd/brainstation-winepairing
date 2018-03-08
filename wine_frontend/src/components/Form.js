@@ -28,17 +28,6 @@ class Form extends React.Component {
                             <option value="20">more than 20 g/L</option>
                         </select>
                     </div>
-                    {/* <div className='col-12 col-md-3'>
-                        <h1> Location </h1>
-                        <div>
-                            <input type="checkbox" name="ontario" />
-                            <label for="ontario">Ontario</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="britishColumbia" />
-                            <label for="britishColumbia">British Columbia</label>
-                        </div>
-                    </div> */}
                     <div className='col-12 col-md-12 pickWine'>
                         <button type='submit' value='Submit' >Pick a Wine for me</button>    
                     </div>
