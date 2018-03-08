@@ -39,7 +39,7 @@ class Home extends React.Component {
             console.log(results.data);
         })
         .catch((error) => {
-            console.log('HIT A FUCKING ERROR')
+            console.log("Ya Dun Goof'd")
             console.log(error);
         }); 
         // axios.get('http://localhost:8080/wine')
@@ -52,16 +52,6 @@ class Home extends React.Component {
         // .catch((error) => {
         //     console.log(error);
         // }); 
-    }
-    submitHandler = (e) => {
-        e.preventDefault();
-        this.setState({
-            winelist: {
-                foodpair: e.target.foodpair.value,
-                cost: e.target.cost.value,
-                sugar: e.target.sugar.value
-            }
-        });
     }
     render() {
         return (
