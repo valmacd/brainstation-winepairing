@@ -1,10 +1,11 @@
 import React from 'react';
 import Form from './components/Form';
 import axios from 'axios';
+import WineDirectory from './components/WineDirectory'
 
 const grid = {
     display:'grid',
-    gridTemplateRows:'1fr auto auto'
+    gridTemplateRows:'1fr auto'
 }
 
 class Home extends React.Component {
@@ -19,29 +20,6 @@ class Home extends React.Component {
             winechoice : []
         }
     }
-    
-    // componentDidUpdate = () => {
-    //    axios.post('http://localhost:8080/wine', this.state.winelist)
-    //     .then((results) => {
-    //         console.log('success')
-    //         console.log(results.data.randomList);
-    //     })
-    //     .catch((error) => {
-    //         console.log("Ya Dun Goof'd")
-    //         console.log(error);
-    //     }); 
-    //     // axios.get('http://localhost:8080/wine')
-    //     // .then((results) => {
-    //     //     console.log(results.data);
-    //     //     // this.setState({
-    //     //     //     winechoices: results.data
-    //     //     // })
-    //     // })
-    //     // .catch((error) => {
-    //     //     console.log(error);
-    //     // }); 
-    // }
-
     submitHandler = (e) => {
         e.preventDefault();
         let winelistInput = {
@@ -76,6 +54,7 @@ class Home extends React.Component {
                 <div className="item2">
                     <Form submitHandler={this.submitHandler} makeRequest={this.makeRequest}/>
                 </div>
+                <WineDirectory winechoice={this.state.winechoice} />
             </div>
         )
     };
