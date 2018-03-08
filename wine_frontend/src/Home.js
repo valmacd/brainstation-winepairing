@@ -12,47 +12,60 @@ class Home extends React.Component {
         super();
         this.state = {
             winelist: {
-                foodpair : '',
                 cost : '',
                 sugar : '',
                 colour: ''
             },  
-            winechoices : []
+            winechoice : []
         }
     }
+    
+    // componentDidUpdate = () => {
+    //    axios.post('http://localhost:8080/wine', this.state.winelist)
+    //     .then((results) => {
+    //         console.log('success')
+    //         console.log(results.data.randomList);
+    //     })
+    //     .catch((error) => {
+    //         console.log("Ya Dun Goof'd")
+    //         console.log(error);
+    //     }); 
+    //     // axios.get('http://localhost:8080/wine')
+    //     // .then((results) => {
+    //     //     console.log(results.data);
+    //     //     // this.setState({
+    //     //     //     winechoices: results.data
+    //     //     // })
+    //     // })
+    //     // .catch((error) => {
+    //     //     console.log(error);
+    //     // }); 
+    // }
 
     submitHandler = (e) => {
         e.preventDefault();
-        this.setState({
-            winelist: {
+        let winelistInput = {
             cost: e.target.cost.value,
             sugar: e.target.sugar.value,
             colour: e.target.colour.value
-            }
-        });   
-    }
-
-    componentDidUpdate = () => {
-       axios.post('http://localhost:8080/wine', this.state.winelist)
+        }
+        axios.post('http://localhost:8080/wine', winelistInput)
         .then((results) => {
             console.log('success')
-            console.log(results.data);
+            console.log(results.data.randomList);
+            this.setState({
+                winechoice: results.data.randomList
+            })
         })
         .catch((error) => {
             console.log("Ya Dun Goof'd")
             console.log(error);
         }); 
-        // axios.get('http://localhost:8080/wine')
-        // .then((results) => {
-        //     console.log(results.data);
-        //     // this.setState({
-        //     //     winechoices: results.data
-        //     // })
-        // })
-        // .catch((error) => {
-        //     console.log(error);
-        // }); 
+        this.setState({
+            winelist: winelistInput
+        }); 
     }
+
     render() {
         return (
             <div style={grid}>
@@ -61,7 +74,7 @@ class Home extends React.Component {
                     <h3>Discover Canadian Wine</h3>
                 </div>
                 <div className="item2">
-                    <Form submitHandler={this.submitHandler} />
+                    <Form submitHandler={this.submitHandler} makeRequest={this.makeRequest}/>
                 </div>
             </div>
         )
