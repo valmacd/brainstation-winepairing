@@ -1,9 +1,41 @@
 import React from 'react';
 
 class WineDetail extends React.Component {
+
+    goBackPage = () => {
+        this.props.history.push('/winelist');
+    }
+
+    fieldEmpty = () => {
+        let wineId = Number(this.props.match.params.wineId);
+        // debugger;
+        for (let i=0; i< this.props.winechoice.length; i++) {
+            if (wineId === this.props.winechoice[i].id){
+                return (
+                    <div>
+                        <img src={this.props.winechoice[i].image_url}/>
+                        <ul>
+                            <li>{'Name: ' + this.props.winechoice[i].name}</li>
+                            <li>{'Producer Name: ' + this.props.winechoice[i].producer_name}</li>
+                            <li>{'$ ' + (this.props.winechoice[i].price_in_cents)/100}</li>
+                            <li>{'Style: ' + this.props.winechoice[i].style}</li>
+                            <li>{'Tasting Note: ' + this.props.winechoice[i].tasting_note}</li>
+                            <li>{'Food Pairing Suggestion: ' + this.props.winechoice[i].serving_suggestion}</li>
+                        </ul>
+                    </div>
+                )
+            }
+        }
+    }
+
+
     render(){
         return(
-            <h1> I AM THE Wine Detail </h1>
+            <div>
+                <h1> Wine Details </h1>
+                {this.fieldEmpty()}
+                <button onClick={this.goBackPage} type='back' name='back'>Go Back to Wine List</button>
+            </div>
         )
     };
 }

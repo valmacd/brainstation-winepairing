@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import Wine from './Wine'
+import {Link} from 'react-router-dom';
+import Wine from './Wine';
 
 const grid = {
     display: 'grid',
@@ -13,9 +13,9 @@ class WineList extends React.Component {
             <Wine wine={wine} />
         )
         return (
-            <div style={grid}>
-            <h1>I am the wineList</h1>
-            {wine}
+            <div>
+                <h1>I am the wineList</h1>
+                {wine}
             </div>
         )
     };

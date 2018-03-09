@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 const grid = {
     display:'grid',
@@ -43,9 +43,7 @@ class Form extends React.Component {
                     </div>
                     
                     <div className='pickWine' style={buttonGrid}>
-                    
-                    <button type='submit' value='Submit'>Pick a Wine for me</button>
-                    
+                        <button type='submit' value='Submit'>Pick a Wine for me</button>
                     </div>
                 
             </form>

@@ -1,9 +1,9 @@
 import React from 'react';
 import Form from './components/Form';
 import axios from 'axios';
-import { Link, Route, Switch, withRouter } from 'react-router-dom'
-import WineList from './components/WineList'
-import WineDetail from './components/WineDetail'
+import { Link, Route, Switch, withRouter } from 'react-router-dom';
+import WineList from './components/WineList';
+import WineDetail from './components/WineDetail';
 
 const grid = {
     display: 'grid',
@@ -58,9 +58,8 @@ class Home extends React.Component {
                     <Form submitHandler={this.submitHandler} makeRequest={this.makeRequest} />
                 </div>
                 <Switch>
-                    <Route path='/winedetail' render={() => <WineDetail />} />
-
-                    <Route path='/winelist' render={() => <WineList winechoice={this.state.winechoice} />} />
+                    <Route path='/winedetail/:wineId' render={(props) => <WineDetail match={props.match} history={props.history} winechoice={this.state.winechoice}/>} />
+                    <Route path='/winelist' render={(props) => <WineList winechoice={this.state.winechoice} />} />
                 </Switch>
             </div>
         )
@@ -68,4 +67,3 @@ class Home extends React.Component {
 }
 
 export default withRouter(Home);
-// <WineDirectory winechoice={this.state.winechoice} />
