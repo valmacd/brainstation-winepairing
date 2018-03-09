@@ -4,7 +4,7 @@ const txtColor={
   color:'white'
 }
 const imgStyle = {
-  width: '50%'
+  width: '40%'
 }
 class Wine extends Component {
   render() {
