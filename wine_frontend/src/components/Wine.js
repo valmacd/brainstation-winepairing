@@ -4,7 +4,11 @@ class Wine extends Component{
   render(){
     return(
 <div>
-<Link to='/winedetail/:wineId'>Name: {this.props.wine.name}</Link>
+<img src="" />
+<Link to='/winedetail/:wineId'><h3>Name: {this.props.wine.name}</h3></Link>
+Price: {this.props.wine.price}
+Pairiing description {this.props.wine.pairing}
+
 </div>
     );
   }
