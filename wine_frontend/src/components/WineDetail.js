@@ -1,11 +1,16 @@
 import React from 'react';
 
+const style={
+    marginTop: "3%",
+    contentAlign:'center'
+}
+const imgSize={
+    width: "35"
+}
 class WineDetail extends React.Component {
-
     goBackPage = () => {
         this.props.history.push('/winelist');
     }
-
     fieldEmpty = () => {
         let wineId = Number(this.props.match.params.wineId);
         // debugger;
@@ -27,12 +32,9 @@ class WineDetail extends React.Component {
             }
         }
     }
-
-
     render(){
         return(
             <div>
-                <h1> Wine Details </h1>
                 {this.fieldEmpty()}
                 <button onClick={this.goBackPage} type='back' name='back'>Go Back to Wine List</button>
             </div>

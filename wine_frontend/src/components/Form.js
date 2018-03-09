@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom';
 const grid = {
     display:'grid',
     gridTemplateColumns:'1fr 1fr 1fr',
-    justifyItem: 'center'
+    justifyItem: 'center',
 }
 const buttonGrid = {
-    gridColumn: '2/3'
+    gridColumn: '2/3',
 }
 
 class Form extends React.Component {

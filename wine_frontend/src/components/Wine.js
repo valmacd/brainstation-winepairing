@@ -1,12 +1,16 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+const txtColor={
+  color:'white'
+}
 class Wine extends Component {
   render() {
-    return(
+    return (
       <div>
-        <img src={this.props.wine.image_url}/>
-        <Link to={'/winedetail/' + this.props.wine.id}>Name: {this.props.wine.name}</Link>
+        <div>
+          <img src={this.props.wine.image_url} />
+        </div>
+        <Link to={'/winedetail/' + this.props.wine.id} style={txtColor}>{this.props.wine.name}</Link>
       </div>
     )
   };

@@ -15,5 +15,13 @@ body {
 }
 
 img {
-  width: 300px;
+  width: 50%;
+}
+
+div {
+  align-content: center;
+}
+
+Link {
+  color: white;
 }
