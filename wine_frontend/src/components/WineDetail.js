@@ -5,7 +5,7 @@ const style={
     contentAlign:'center'
 }
 const imgSize={
-    width: "35"
+    width: "35%"
 }
 class WineDetail extends React.Component {
     goBackPage = () => {
@@ -17,8 +17,9 @@ class WineDetail extends React.Component {
         for (let i=0; i< this.props.winechoice.length; i++) {
             if (wineId === this.props.winechoice[i].id){
                 return (
-                    <div>
-                        <img src={this.props.winechoice[i].image_url}/>
+                    <div style={style}>
+                    <h1>{'Name: ' + this.props.winechoice[i].name}</h1>
+                        <img src={this.props.winechoice[i].image_url} style={imgSize} alt="Loading"/>
                         <ul>
                             <li>{'Name: ' + this.props.winechoice[i].name}</li>
                             <li>{'Producer Name: ' + this.props.winechoice[i].producer_name}</li>
@@ -26,6 +27,7 @@ class WineDetail extends React.Component {
                             <li>{'Style: ' + this.props.winechoice[i].style}</li>
                             <li>{'Tasting Note: ' + this.props.winechoice[i].tasting_note}</li>
                             <li>{'Food Pairing Suggestion: ' + this.props.winechoice[i].serving_suggestion}</li>
+                            <li>{`Quantity in Stock ` + Number(this.props.winechoice[1].quantity)}</li>
                         </ul>
                     </div>
                 )
