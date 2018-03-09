@@ -28,7 +28,8 @@ class WineDetail extends React.Component {
                         <img src={this.props.winechoice[i].image_url} style={imgSize} alt="Loading"/>
                         <ul>
                             <li>{'Producer Name: ' + this.props.winechoice[i].producer_name}</li>
-                            <li>{'$ ' + (this.props.winechoice[i].price_in_cents)/100}</li>
+                            <li>{'$ ' + Number(this.props.winechoice[i].price_in_cents)/100}</li>
+                            <li>{'Sugar Content: ' + this.props.winechoice[i].sugar_in_grams_per_liter + ' g/L'}</li>
                             <li>{'Style: ' + this.props.winechoice[i].style}</li>
                             <li>{'Tasting Note: ' + this.props.winechoice[i].tasting_note}</li>
                             <li>{'Food Pairing Suggestion: ' + this.props.winechoice[i].serving_suggestion}</li>
