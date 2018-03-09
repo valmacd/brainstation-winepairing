@@ -32,7 +32,8 @@ class WineDetail extends React.Component {
                             <li>{'Style: ' + this.props.winechoice[i].style}</li>
                             <li>{'Tasting Note: ' + this.props.winechoice[i].tasting_note}</li>
                             <li>{'Food Pairing Suggestion: ' + this.props.winechoice[i].serving_suggestion}</li>
-                            <li>{`Quantity in Stock ` + Number(this.props.winechoice[1].quantity)}</li>
+                            <li>{`Alcohol Content: ` + Number(this.props.winechoice[1].alcohol_content)/100 + `%`}</li>
+                            <li>{`Quantity in Stock: ` + Number(this.props.winechoice[1].quantity)}</li>
                         </ul>
                         <button onClick={this.goBackPage} type='back' name='back'>Go Back to Wine List</button>
                     </div>
