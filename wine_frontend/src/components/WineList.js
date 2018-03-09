@@ -1,15 +1,17 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Wine from './Wine';
 
+const grid = {
+    display: 'flex',
+    marginTop:'3%'
+}
 class WineList extends React.Component {
     render() {
         let wine = this.props.winechoice.map(wine=>
             <Wine wine={wine} />
         )
         return (
-            <div>
-                <h1>I am the wineList</h1>
+            <div style={grid}>
                 {wine}
             </div>
         )
